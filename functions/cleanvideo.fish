@@ -24,9 +24,9 @@ function cleanvideo -d "Leave only what you need in the video container"
                 set audio_indexies $value
             case s subtitles-indexies
                 set subtitles_indexies $value
-            case f ffmpeg
+            case F ffmpeg
                 set FFMPEG_PATH $value
-            case l loglevel
+            case L loglevel
                 set loglevel $value
             case h help
                 echo "Keep in the video container only what you need."
@@ -37,8 +37,8 @@ function cleanvideo -d "Leave only what you need in the video container"
                 echo "  -o --output               an output file path (required)"
                 echo "  -a --audio-indexies       audio track index in the file (default: 1)"
                 echo "  -s --subtitles-indexies   subtitle track index in the file (default: 1)"
-                echo "  -f --ffmpeg               path to the ffmpeg executable"
-                echo "  -l --loglevel             ffmpeg loglevel (default: fatal)"
+                echo "  -F --ffmpeg               path to the ffmpeg executable"
+                echo "  -L --loglevel             ffmpeg loglevel (default: fatal)"
                 echo ""
                 echo "Example:"
                 echo ""

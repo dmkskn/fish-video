@@ -35,11 +35,11 @@ end
 
 
 @test "throws and error code 1 if ffmpeg was not found" (
-    cleanvideo --input input.mkv --output output.mkv -f /path/to/the/ffmpeg &> /dev/null
+    cleanvideo --input input.mkv --output output.mkv --ffmpeg /path/to/the/ffmpeg &> /dev/null
 ) $status -eq 1
 
 
 @test "throws and error if ffmpeg was not found" (
     set -g tmp_log (command mktemp /tmp/log.XXXXX)
-    cleanvideo --input input.mkv --output output.mkv -f /path/to/the/ffmpeg &> $tmp_log
+    cleanvideo --input input.mkv --output output.mkv --ffmpeg /path/to/the/ffmpeg &> $tmp_log
 ) (cat $tmp_log) = "ffmpeg is required (https://www.ffmpeg.org)."
