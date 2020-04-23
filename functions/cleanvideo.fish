@@ -8,7 +8,7 @@ function cleanvideo -d "Leave only what you need in the video container"
     set -l loglevel "fatal"
 
     # If there is no fish-getopts, throw an error
-    if not test (string split " " (functions --all) | grep getopts)
+    if not functions -q getopts
         echo "fish-getopts is required (https://github.com/jorgebucaran/fish-getopts)." >&2
         return 1
     end

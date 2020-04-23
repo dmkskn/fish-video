@@ -4,7 +4,7 @@ function extractsubtitles -d "Extract subtitles from video file"
     set -l loglevel "fatal"
 
     # If there is no fish-getopts, throw an error
-    if not test (string split " " (functions --all) | grep getopts)
+    if not functions -q getopts
         echo "fish-getopts is required (https://github.com/jorgebucaran/fish-getopts)." >&2
         return 1
     end
